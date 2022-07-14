@@ -1,0 +1,94 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+ 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// shortcuts
+#define _____ &none
+#define ooooo &trans
+
+// Layers
+#define CO 0
+#define QW 1
+#define SY 2
+#define EX 3
+#define NU 4
+#define FN 5
+
+/ {
+  macros {
+    ZMK_MACRO(uc_gbp, wait-ms = <40>; bindings = <&kp LC(LS(U))>, <&kp N0 &kp N0 &kp A &kp N3>, <&kp SPACE>;)
+    ZMK_MACRO(vi_sav, wait-ms = <40>; bindings = <&kp COLON &kp W>, <&kp RET>;)
+    ZMK_MACRO(runner, bindings = <&kp LC(SPACE)>;)
+    ZMK_MACRO(find, bindings = <&kp LC(F)>;)
+    ZMK_MACRO(pre_tab, bindings = <&kp LC(LS(TAB))>;)
+    ZMK_MACRO(nex_tab, bindings = <&kp LC(TAB)>;)
+    ZMK_MACRO(pre_dsk, bindings = <&kp LC(LG(LEFT))>;)
+    ZMK_MACRO(nex_dsk, bindings = <&kp LC(LG(RIGHT))>;)
+    ZMK_MACRO(tmux, bindings = <&kp LC(B)>;)
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+      colemak_dh {
+        bindings = <
+          &lt NU Q    &kp W          &kp F          &kp P       &kp B                      &kp J     &kp L      &kp U         &kp Y          &lt FN SEMI
+          &kp A       &kp R          &kp S          &kp T       &kp G                      &kp M     &kp N      &kp E         &kp I          &kp O
+          &mt LSHFT Z &kp X          &kp C          &kp D       &kp V                      &kp K     &kp H      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE  &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+        >;
+      };
+
+      qwerty {
+        bindings = <
+          &lt NU Q    &kp W          &kp E          &kp R       &kp T                      &kp Y     &kp U      &kp I         &kp O          &lt FN P
+          &kp A       &kp S          &kp D          &kp F       &kp G                      &kp H     &kp J      &kp K         &kp L          &kp SEMI
+          &mt LSHFT Z &kp X          &kp C          &kp V       &kp B                      &kp N     &kp M      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE  &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+        >;
+      };
+
+      symbol {
+        bindings = <
+          &kp TILDE &kp GRAVE &kp PLUS  &kp EQUAL &kp _____                        &kp _____ &uc_gbp      &kp _____ &kp PIPE  &kp BSLH
+          &kp _____ &kp LBKT  &kp LBRC  &kp LPAR  &kp _____                        &kp _____ &kp EXCL  &kp AT    &kp HASH  &kp DLLR
+          &kp _____ &kp RBKT  &kp RBRC  &kp RPAR  &kp _____                        &kp _____ &kp AMPS  &kp STAR  &kp PRCNT &kp CARET
+          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp _____ &kp ooooo &kp ooooo &kp ooooo
+        >;
+      };
+
+      extend {
+        bindings = <
+          &kp _____ &vi_sav   &kp _____ &kp _____ &kp _____                        &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp _____
+          &kp _____ &find     &pre_tab  &nex_tab  &pre_dsk                         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &runner
+          &kp _____ &kp _____ &kp _____ &kp _____ &nex_dsk                         &kp CAPS  &kp _____ &kp _____ &kp _____ &kp _____
+          &kp ooooo &kp ooooo &kp DEL   &kp _____ &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
+        >;
+      };
+
+      numbers {
+        bindings = <
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp DOT   &kp N7    &kp N8    &kp N9    &kp N0
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp MINUS &kp N4    &kp N5    &kp N6    &kp PLUS
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp STAR  &kp N1    &kp N2    &kp N3    &kp FSLH
+          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
+        >;
+      };
+
+      fns {
+        bindings = <
+          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &kp C_PREV &kp F7    &kp F8    &kp F9    &kp F10
+          &reset       &kp _____    &kp _____    &bt BT_CLR   &out OUT_TOG                       &kp C_PP   &kp F4    &kp F5    &kp F6    &kp F11
+          &kp _____    &kp _____    &kp _____    &kp _____    &bootloader                        &kp C_NEXT &kp F1    &kp F2    &kp F3    &kp F12
+          &kp ooooo    &kp ooooo    &kp ooooo    &kp ooooo    &kp ooooo     &bt BT_CLR &kp ooooo &kp ooooo  &kp ooooo &kp ooooo &kp ooooo &kp ooooo
+        >;
+      };
+  };
+};
