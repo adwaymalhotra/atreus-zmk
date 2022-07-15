@@ -30,6 +30,15 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
+      clt: custom_layer_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "CUSTOM_HOLD_TAP";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&mo>, <&kp>;
+      };
   };
 
   macros {
@@ -49,23 +58,23 @@
 
       colemak_dh {
         bindings = <
-          &cht NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &cht FN SEMI
+          &clt NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &clt FN SEMI
           &kp A        &kp R &kp S &kp T &kp G &kp M &kp N &kp E     &kp I   &kp O
           &cht LSHFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp SQT
 
-          &mo FN        &cht LALT UNDER &cht LGUI MINUS &cht EX BSPC   &kp SPACE       &kp ESC //left
-          &cht LCTL TAB &kp LSHFT       &cht SY RET     &cht LGUI FSLH &cht LALT QMARK &tmux   //right
+          &mo FN        &cht LALT UNDER &cht LGUI MINUS &clt EX BSPC   &kp SPACE       &kp ESC //left
+          &cht LCTL TAB &kp LSHFT       &clt SY RET     &cht LGUI FSLH &cht LALT QMARK &tmux   //right
         >;
       };
 
       qwerty {
         bindings = <
-          &cht NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &cht FN P
+          &clt NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &clt FN P
           &kp A        &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
           &cht LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
 
-          &mo FN        &cht LALT UNDER &cht LGUI MINUS &cht EX BSPC   &kp SPACE       &kp ESC //left
-          &cht LCTL TAB &kp LSHFT       &cht SY RET     &cht LGUI FSLH &cht LALT QMARK &tmux   //right
+          &mo FN        &cht LALT UNDER &cht LGUI MINUS &clt EX BSPC   &kp SPACE       &kp ESC //left
+          &cht LCTL TAB &kp LSHFT       &clt SY RET     &cht LGUI FSLH &cht LALT QMARK &tmux   //right
         >;
       };
 
@@ -112,7 +121,7 @@
           &reset       &none        &none        &none        &none        &kp C_PP   &kp F4 &kp F5 &kp F6 &kp F11
           &out OUT_TOG &none        &none        &none        &bootloader  &kp C_NEXT &kp F1 &kp F2 &kp F3 &kp F12
 
-          &trans &trans &trans &trans &trans &bt BT_CLR //left
+          &none  &trans &trans &trans &trans &bt BT_CLR //left
           &trans &trans &trans &trans &trans &trans //right
         >;
       };
