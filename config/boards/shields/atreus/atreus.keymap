@@ -93,7 +93,7 @@
       // Extend Layer with Macros and Special Keys
       extend {
         bindings = <
-          &none &vi_sav &C_VOL_UP &C_VOL_DN &C_MUTE  &kp HOME &kp PG_UP &kp PG_DN &kp END   &none
+          &none &vi_sav &c_vol_up &c_vol_dn &c_mute  &kp HOME &kp PG_UP &kp PG_DN &kp END   &none
           &none &find   &pre_tab  &nex_tab  &pre_dsk &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &runner
           &none &none   &none     &none     &nex_dsk &kp CAPS &none     &none     &none     &none
 
