@@ -23,8 +23,8 @@
 
 / {
   macros {
-    ZMK_MACRO(uc_gbp, wait-ms = <40>; bindings = <&kp LC(LS(U))>, <&kp N0 &kp N0 &kp A &kp N3>, <&kp SPACE>;)
-    ZMK_MACRO(vi_sav, wait-ms = <40>; bindings = <&kp COLON &kp W>, <&kp RET>;)
+    ZMK_MACRO(uc_gbp, wait-ms = <20>; bindings = <&kp LC(LS(U))>, <&kp N0 &kp N0 &kp A &kp N3>, <&kp SPACE>;) // this doesn't work on Mac
+    ZMK_MACRO(vi_sav, wait-ms = <20>; bindings = <&kp COLON &kp W>, <&kp RET>;)
     ZMK_MACRO(runner, bindings = <&kp LC(SPACE)>;)
     ZMK_MACRO(find, bindings = <&kp LC(F)>;)
     ZMK_MACRO(pre_tab, bindings = <&kp LC(LS(TAB))>;)
@@ -39,49 +39,53 @@
 
       colemak_dh {
         bindings = <
-          &lt NU Q    &kp W          &kp F          &kp P       &kp B                      &kp J     &kp L      &kp U         &kp Y          &lt FN SEMI
-          &kp A       &kp R          &kp S          &kp T       &kp G                      &kp M     &kp N      &kp E         &kp I          &kp O
-          &mt LSHFT Z &kp X          &kp C          &kp D       &kp V                      &kp K     &kp H      &kp COMMA     &kp DOT        &kp SQT
-          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE  &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+          &lt NU Q    &kp W          &kp F          &kp P       &kp B                     &kp J     &kp L      &kp U         &kp Y          &lt FN SEMI
+          &kp A       &kp R          &kp S          &kp T       &kp G                     &kp M     &kp N      &kp E         &kp I          &kp O
+          &mt LSHFT Z &kp X          &kp C          &kp D       &kp V                     &kp K     &kp H      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
         >;
       };
 
       qwerty {
         bindings = <
-          &lt NU Q    &kp W          &kp E          &kp R       &kp T                      &kp Y     &kp U      &kp I         &kp O          &lt FN P
-          &kp A       &kp S          &kp D          &kp F       &kp G                      &kp H     &kp J      &kp K         &kp L          &kp SEMI
-          &mt LSHFT Z &kp X          &kp C          &kp V       &kp B                      &kp N     &kp M      &kp COMMA     &kp DOT        &kp SQT
-          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE  &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+          &lt NU Q    &kp W          &kp E          &kp R       &kp T                     &kp Y     &kp U      &kp I         &kp O          &lt FN P
+          &kp A       &kp S          &kp D          &kp F       &kp G                     &kp H     &kp J      &kp K         &kp L          &kp SEMI
+          &mt LSHFT Z &kp X          &kp C          &kp V       &kp B                     &kp N     &kp M      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE &kp ESC &kp TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
         >;
       };
 
+      // Symbol Layer
       symbol {
         bindings = <
-          &kp TILDE &kp GRAVE &kp PLUS  &kp EQUAL &kp _____                        &kp _____ &uc_gbp      &kp _____ &kp PIPE  &kp BSLH
-          &kp _____ &kp LBKT  &kp LBRC  &kp LPAR  &kp _____                        &kp _____ &kp EXCL  &kp AT    &kp HASH  &kp DLLR
-          &kp _____ &kp RBKT  &kp RBRC  &kp RPAR  &kp _____                        &kp _____ &kp AMPS  &kp STAR  &kp PRCNT &kp CARET
-          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp _____ &kp ooooo &kp ooooo &kp ooooo
+          &kp TILDE &kp GRAVE &kp PLUS  &kp EQUAL &kp _____                     &kp _____ &uc_gbp   &kp _____ &kp PIPE  &kp BSLH
+          &kp _____ &kp LBKT  &kp LBRC  &kp LPAR  &kp _____                     &kp _____ &kp EXCL  &kp AT    &kp HASH  &kp DLLR
+          &kp _____ &kp RBKT  &kp RBRC  &kp RPAR  &kp _____                     &kp _____ &kp AMPS  &kp STAR  &kp PRCNT &kp CARET
+          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp _____ &kp ooooo &kp ooooo &kp ooooo
         >;
       };
 
+      // Extend Layer with Macros and Special Keys
       extend {
         bindings = <
-          &kp _____ &vi_sav   &kp _____ &kp _____ &kp _____                        &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp _____
-          &kp _____ &find     &pre_tab  &nex_tab  &pre_dsk                         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &runner
-          &kp _____ &kp _____ &kp _____ &kp _____ &nex_dsk                         &kp CAPS  &kp _____ &kp _____ &kp _____ &kp _____
-          &kp ooooo &kp ooooo &kp DEL   &kp _____ &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
+          &kp _____ &vi_sav   &kp _____ &kp _____ &kp _____                     &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp _____
+          &kp _____ &find     &pre_tab  &nex_tab  &pre_dsk                      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &runner
+          &kp _____ &kp _____ &kp _____ &kp _____ &nex_dsk                      &kp CAPS  &kp _____ &kp _____ &kp _____ &kp _____
+          &kp ooooo &kp ooooo &kp DEL   &kp _____ &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
         >;
       };
 
+      // Numpad
       numbers {
         bindings = <
-          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp DOT   &kp N7    &kp N8    &kp N9    &kp N0
-          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp MINUS &kp N4    &kp N5    &kp N6    &kp PLUS
-          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                        &kp STAR  &kp N1    &kp N2    &kp N3    &kp FSLH
-          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo    &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                     &kp DOT   &kp N7    &kp N8    &kp N9    &kp N0
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                     &kp MINUS &kp N4    &kp N5    &kp N6    &kp PLUS
+          &kp _____ &kp _____ &kp _____ &kp _____ &kp _____                     &kp STAR  &kp N1    &kp N2    &kp N3    &kp FSLH
+          &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo &kp ooooo
         >;
       };
-
+      
+      // Adjustments layer and Fn Keys
       fns {
         bindings = <
           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                       &kp C_PREV &kp F7    &kp F8    &kp F9    &kp F10
