@@ -21,6 +21,18 @@
 #define FN 5
 
 / {
+  behaviors {
+      kt: key_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ALPHAKEY_MT";
+        #binding-cells = <2>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+      };
+  };
+
   macros {
     ZMK_MACRO(uc_gbp, wait-ms = <16>; bindings = <&kp LC(LS(U))>, <&kp N0 &kp N0 &kp A &kp N3>, <&kp SPACE>;) // this doesn't work on Mac
     ZMK_MACRO(vi_sav, wait-ms = <16>; bindings = <&kp COLON &kp W>, <&kp RET>;)
@@ -38,19 +50,19 @@
 
       colemak_dh {
         bindings = <
-          &lt NU Q    &kp W          &kp F          &kp P       &kp B                          &kp J     &kp L      &kp U         &kp Y          &lt FN SEMI
+          &kt NU Q    &kp W          &kp F          &kp P       &kp B                          &kp J     &kp L      &kp U         &kp Y          &kt FN SEMI
           &kp A       &kp R          &kp S          &kp T       &kp G                          &kp M     &kp N      &kp E         &kp I          &kp O
-          &mt LSHFT Z &kp X          &kp C          &kp D       &kp V                          &kp K     &kp H      &kp COMMA     &kp DOT        &kp SQT
-          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE &kp ESC &mt LCTL TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+          &kt LSHFT Z &kp X          &kp C          &kp D       &kp V                          &kp K     &kp H      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &kt LALT UNDER &kt LGUI MINUS &kt EX BSPC &kp SPACE &kp ESC &kt LCTL TAB &kp LSHFT &kt SY RET &kt LGUI FSLH &kt LALT QMARK &tmux
         >;
       };
 
       qwerty {
         bindings = <
-          &lt NU Q    &kp W          &kp E          &kp R       &kp T                          &kp Y     &kp U      &kp I         &kp O          &lt FN P
+          &kt NU Q    &kp W          &kp E          &kp R       &kp T                          &kp Y     &kp U      &kp I         &kp O          &kt FN P
           &kp A       &kp S          &kp D          &kp F       &kp G                          &kp H     &kp J      &kp K         &kp L          &kp SEMI
-          &mt LSHFT Z &kp X          &kp C          &kp V       &kp B                          &kp N     &kp M      &kp COMMA     &kp DOT        &kp SQT
-          &mo FN      &mt LALT UNDER &mt LGUI MINUS &lt EX BSPC &kp SPACE &kp ESC &mt LCTL TAB &kp LSHFT &lt SY RET &mt LGUI FSLH &mt LALT QMARK &tmux
+          &kt LSHFT Z &kp X          &kp C          &kp V       &kp B                          &kp N     &kp M      &kp COMMA     &kp DOT        &kp SQT
+          &mo FN      &kt LALT UNDER &kt LGUI MINUS &kt EX BSPC &kp SPACE &kp ESC &kt LCTL TAB &kp LSHFT &kt SY RET &kt LGUI FSLH &kt LALT QMARK &tmux
         >;
       };
 
@@ -67,9 +79,9 @@
       // Extend Layer with Macros and Special Keys
       extend {
         bindings = <
-          &kp none &vi_sav  &kp none &kp none &kp none                     &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp none
-          &kp none &find    &pre_tab &nex_tab &pre_dsk                      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &runner
-          &kp none &kp none &kp none &kp none &nex_dsk                      &kp CAPS  &kp none &kp none &kp none &kp none
+          &kp none  &vi_sav   &kp none  &kp none &kp none                      &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp none
+          &kp none  &find     &pre_tab  &nex_tab &pre_dsk                      &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &runner
+          &kp none  &kp none  &kp none  &kp none &nex_dsk                      &kp CAPS  &kp none  &kp none  &kp none  &kp none
           &kp trans &kp trans &kp DEL   &kp none &kp trans &kp trans &kp trans &kp trans &kp trans &kp trans &kp trans &kp trans
         >;
       };
