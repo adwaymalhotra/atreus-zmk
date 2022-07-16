@@ -20,14 +20,6 @@
 #define FN 5
 
 / {
-  chosen {
-      zmk,battery = &vbatt;
-  };
-  
-  vbatt: vbatt {
-      compatible = "zmk,battery-nrf-vddh";
-      label = "VBATT";
-  };
   behaviors {
       cht: custom_hold_tap {
         compatible = "zmk,behavior-hold-tap";
