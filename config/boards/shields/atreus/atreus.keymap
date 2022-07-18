@@ -94,8 +94,8 @@
       extend {
         bindings = <
           &none &vi_sav &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp HOME &kp PG_UP &kp PG_DN &kp END   &none
-          &none &find   &pre_tab     &nex_tab     &pre_dsk   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &runner
-          &none &none   &none        &none        &nex_dsk   &kp CAPS &none     &none     &none     &none
+          &none &find   &pre_tab     &nex_tab     &nex_dsk   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &runner
+          &none &none   &none        &none        &pre_dsk   &kp CAPS &none     &none     &none     &none
 
           &trans &trans &kp DEL &none  &trans &trans //left
           &trans &trans &trans  &trans &trans &trans //right
