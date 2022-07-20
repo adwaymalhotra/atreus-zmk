@@ -21,9 +21,9 @@
 
 / {
   behaviors {
-      amt: alpha_mod_tap {
+      htma: hold_tap_mod_alpha {
         compatible = "zmk,behavior-hold-tap";
-        label = "CUSTOM_HOLD_TAP";
+        label = "HOLD_TAP_MOD_ALPHA";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
         quick-tap-ms = <125>;
@@ -31,9 +31,9 @@
         global-quick-tap;
         bindings = <&kp>, <&kp>;
       };
-      alt: alpha_layer_tap {
+      htla: hold_tap_layer_alpha {
         compatible = "zmk,behavior-hold-tap";
-        label = "CUSTOM_HOLD_TAP";
+        label = "HOLD_TAP_LAYER_ALPHA";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
         quick-tap-ms = <125>;
@@ -41,19 +41,21 @@
         global-quick-tap;
         bindings = <&mo>, <&kp>;
       };
-      hmt: hold_mod_tap {
+      htm: hold_tap_mod {
         compatible = "zmk,behavior-hold-tap";
-        label = "CUSTOM_LAYER_TAP";
+        label = "HOLD_TAP_MOD";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
+        quick-tap-ms = <0>;
         flavor = "hold-preferred";
         bindings = <&kp>, <&kp>;
       };
-      hlt: hold_layer_tap {
+      htl: hold_tap_layer {
         compatible = "zmk,behavior-hold-tap";
-        label = "CUSTOM_LAYER_TAP";
+        label = "HOLD_TAP_LAYER";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
+        quick-tap-ms = <0>;
         flavor = "hold-preferred";
         bindings = <&mo>, <&kp>;
       };
@@ -76,23 +78,23 @@
 
       colemak_dh {
         bindings = <
-          &alt NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &alt FN SEMI
+          &htla NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &htla FN SEMI
           &kp A        &kp R &kp S &kp T &kp G &kp M &kp N &kp E     &kp I   &kp O
-          &amt LSHFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp SQT
+          &htma LSHFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp SQT
 
-          &mo FN        &hmt LALT UNDER &hmt LGUI MINUS &hlt EX BSPC   &kp SPACE       &kp ESC //left
-          &hmt LCTL TAB &kp LSHFT       &hlt SY RET     &hmt LGUI FSLH &hmt LALT QMARK &tmux   //right
+          &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
+          &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
         >;
       };
 
       qwerty {
         bindings = <
-          &alt NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &alt FN P
+          &htla NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &htla FN P
           &kp A        &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
-          &amt LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
+          &htma LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
 
-          &mo FN        &hmt LALT UNDER &hmt LGUI MINUS &hlt EX BSPC   &kp SPACE       &kp ESC //left
-          &hmt LCTL TAB &kp LSHFT       &hlt SY RET     &hmt LGUI FSLH &hmt LALT QMARK &tmux   //right
+          &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
+          &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
         >;
       };
 
