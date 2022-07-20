@@ -79,7 +79,7 @@
       colemak_dh {
         bindings = <
           &htla NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &htla FN SEMI
-          &kp A        &kp R &kp S &kp T &kp G &kp M &kp N &kp E     &kp I   &kp O
+          &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E     &kp I   &kp O
           &htma LSHFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp SQT
 
           &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
@@ -90,7 +90,7 @@
       qwerty {
         bindings = <
           &htla NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &htla FN P
-          &kp A        &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
+          &kp A         &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
           &htma LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
 
           &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
