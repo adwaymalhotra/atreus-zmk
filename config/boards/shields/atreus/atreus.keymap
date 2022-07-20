@@ -46,7 +46,6 @@
         label = "CUSTOM_LAYER_TAP";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
-        quick-tap-ms = <60>;
         flavor = "hold-preferred";
         bindings = <&kp>, <&kp>;
       };
@@ -55,7 +54,6 @@
         label = "CUSTOM_LAYER_TAP";
         #binding-cells = <2>;
         tapping-term-ms = <150>;
-        quick-tap-ms = <60>;
         flavor = "hold-preferred";
         bindings = <&mo>, <&kp>;
       };
