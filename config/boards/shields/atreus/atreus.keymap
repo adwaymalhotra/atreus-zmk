@@ -21,6 +21,16 @@
 
 / {
   behaviors {
+      hm: home_row_mod {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOME_ROW_MOD";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        global-quick-tap;
+        bindings = <&kp>, <&kp>;
+      };
       htma: hold_tap_mod_alpha {
         compatible = "zmk,behavior-hold-tap";
         label = "HOLD_TAP_MOD_ALPHA";
@@ -78,9 +88,9 @@
 
       colemak_dh {
         bindings = <
-          &htla NU Q    &kp W &kp F &kp P &kp B &kp J &kp L &kp U     &kp Y   &htla FN SEMI
-          &kp A         &kp R &kp S &kp T &kp G &kp M &kp N &kp E     &kp I   &kp O
-          &htma LSHFT Z &kp X &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp SQT
+          &htla NU Q    &kp W      &kp F      &kp P &kp B &kp J &kp L &kp U      &kp Y      &htla FN SEMI
+          &hm LGUI A    &hm LALT R &hm LCTL S &kp T &kp G &kp M &kp N &hm LCTL E &hm LALT I &hm LGUI O
+          &htma LSHFT Z &kp X      &kp C      &kp D &kp V &kp K &kp H &kp COMMA  &kp DOT    &kp SQT
 
           &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
           &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
