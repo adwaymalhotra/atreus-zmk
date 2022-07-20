@@ -40,7 +40,7 @@
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&mo>, <&kp>;
-      }
+      };
       hmt: hold_mod_tap {
         compatible = "zmk,behavior-hold-tap";
         label = "CUSTOM_LAYER_TAP";
