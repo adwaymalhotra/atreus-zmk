@@ -44,7 +44,7 @@
           &hml LGUI A &hml LALT R &hml LCTL S &hml LSHFT T &kp G &kp M &hmr LSHFT N &hmr LCTL E &hmr LALT I &hmr LGUI O
           &kp Z       &kp X       &kp C       &kp D        &kp V &kp K &kp H        &kp COMMA   &kp DOT     &kp SQT
 
-          &mo FN        &hml LALT UNDER &hml LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
+          &mo FN       &hml LALT UNDER &hml LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
           &mt LCTL TAB &kp LSHFT       &htl SY RET     &hmr LGUI FSLH &hmr LALT QMARK &tmux   //right
         >;
       };
