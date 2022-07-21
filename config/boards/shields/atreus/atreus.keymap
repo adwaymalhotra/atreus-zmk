@@ -21,35 +21,69 @@
 
 / {
   behaviors {
-      hm: home_row_mod {
+      hml: home_row_mod_l {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOME_ROW_MOD";
+        label = "HOME_ROW_MOD_L";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
         quick-tap-ms = <175>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <5>,<6>,<7>,<8>,<9>,
+                                     <15>,<16>,<17>,<18>,<19>,
+                                     <25>,<26>,<27>,<28>,<29>,
+                                     <30>,<31>,<32>,<33>,<34>,<35>,
+                                     <36>,<37>,<38>,<39>,<40>,<41>
+                                     ;
       };
-      htma: hold_tap_mod_alpha {
+      hmr: home_row_mod_r {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOLD_TAP_MOD_ALPHA";
+        label = "HOME_ROW_MOD_R";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
+        quick-tap-ms = <175>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <0>,<1>,<2>,<3>,<4>,
+                                     <10>,<11>,<12>,<13>,<14>,
+                                     <20>,<21>,<22>,<23>,<24>,
+                                     <30>,<31>,<32>,<33>,<34>,<35>,
+                                     <36>,<37>,<38>,<39>,<40>,<41>
+                                     ;
       };
-      htla: hold_tap_layer_alpha {
+      hll: home_row_layer_l {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOLD_TAP_LAYER_ALPHA";
+        label = "HOME_ROW_LAYER_L";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
+        quick-tap-ms = <175>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&mo>, <&kp>;
+        hold-trigger-key-positions = <5>,<6>,<7>,<8>,<9>,
+                                     <15>,<16>,<17>,<18>,<19>,
+                                     <25>,<26>,<27>,<28>,<29>,
+                                     <30>,<31>,<32>,<33>,<34>,<35>,
+                                     <36>,<37>,<38>,<39>,<40>,<41>
+                                     ;
+      };
+      hlr: home_row_layer_r {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOME_ROW_LAYER_R";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <175>;
+        flavor = "tap-preferred";
+        global-quick-tap;
+        bindings = <&mo>, <&kp>;
+        hold-trigger-key-positions = <0>,<1>,<2>,<3>,<4>,
+                                     <10>,<11>,<12>,<13>,<14>,
+                                     <20>,<21>,<22>,<23>,<24>,
+                                     <30>,<31>,<32>,<33>,<34>,<35>,
+                                     <36>,<37>,<38>,<39>,<40>,<41>
+                                     ;
       };
       htm: hold_tap_mod {
         compatible = "zmk,behavior-hold-tap";
@@ -88,9 +122,9 @@
 
       colemak_dh {
         bindings = <
-          &htla NU Q    &kp W      &kp F      &kp P       &kp B &kp J &kp L       &kp U      &kp Y      &htla FN SEMI
-          &hm LGUI A    &hm LALT R &hm LCTL S &hm LSHFT T &kp G &kp M &hm LSHFT N &hm LCTL E &hm LALT I &hm LGUI O
-          &htma LSHFT Z &kp X      &kp C      &kp D       &kp V &kp K &kp H       &kp COMMA  &kp DOT    &kp SQT
+          &hll NU Q   &kp W       &kp F       &kp P        &kp B &kp J &kp L        &kp U       &kp Y       &hlr FN SEMI
+          &hml LGUI A &hml LALT R &hml LCTL S &hml LSHFT T &kp G &kp M &hmr LSHFT N &hmr LCTL E &hmr LALT I &hmr LGUI O
+          &kp Z       &kp X       &kp C       &kp D        &kp V &kp K &kp H        &kp COMMA   &kp DOT     &kp SQT
 
           &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
           &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
@@ -99,9 +133,9 @@
 
       qwerty {
         bindings = <
-          &htla NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &htla FN P
-          &kp A         &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
-          &htma LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
+          &hll NU Q    &kp W &kp E &kp R &kp T &kp Y &kp U &kp I     &kp O   &hlr FN P
+          &kp A        &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
+          &hml LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
 
           &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
           &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
