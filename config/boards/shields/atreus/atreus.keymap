@@ -25,8 +25,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOME_ROW_MOD_L";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <175>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <200>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&kp>, <&kp>;
@@ -36,8 +36,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOME_ROW_MOD_R";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <175>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <200>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&kp>, <&kp>;
@@ -47,8 +47,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOME_ROW_LAYER_L";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <175>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <200>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&mo>, <&kp>;
@@ -58,8 +58,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "HOME_ROW_LAYER_R";
         #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <175>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <200>;
         flavor = "tap-preferred";
         global-quick-tap;
         bindings = <&mo>, <&kp>;
