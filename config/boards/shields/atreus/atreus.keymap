@@ -30,6 +30,9 @@
     ZMK_MACRO(pre_dsk, bindings = <&kp LC(LG(LEFT))>;)
     ZMK_MACRO(nex_dsk, bindings = <&kp LC(LG(RIGHT))>;)
     ZMK_MACRO(tmux, bindings = <&kp LC(B)>;)
+    ZMK_MACRO(cut, bindings = <&kp LC(X)>;)
+    ZMK_MACRO(copy, bindings = <&kp LC(C)>;)
+    ZMK_MACRO(paste, bindings = <&kp LC(V)>;)
   };
 
   keymap {
@@ -74,7 +77,7 @@
         bindings = <
           &none &vi_sav &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &kp HOME &kp PG_DN &kp PG_UP &kp END   &none
           &none &find   &pre_tab     &nex_tab     &nex_dsk   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &runner
-          &none &none   &none        &none        &pre_dsk   &kp CAPS &none     &none     &none     &none
+          &none &cut    &copy        &paste       &pre_dsk   &kp CAPS &none     &none     &none     &none
 
           &trans &trans &kp DEL &none  &trans &trans //left
           &trans &trans &trans  &trans &trans &trans //right
