@@ -106,8 +106,8 @@
           &hml LGUI A &hml LALT R &hml LCTL S &hml LSHFT T &kp G &kp M &hmr LSHFT N &hmr LCTL E &hmr LALT I &hmr LGUI O
           &kp Z       &kp X       &kp C       &kp D        &kp V &kp K &kp H        &kp COMMA   &kp DOT     &kp SQT
 
-          &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
-          &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
+          &mo FN        &hml LALT UNDER &hml LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
+          &mt LCTL TAB &kp LSHFT       &htl SY RET     &hmr LGUI FSLH &hmr LALT QMARK &tmux   //right
         >;
       };
 
@@ -117,8 +117,8 @@
           &kp A        &kp S &kp D &kp F &kp G &kp H &kp J &kp K     &kp L   &kp SEMI
           &hml LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SQT
 
-          &mo FN        &htm LALT UNDER &htm LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
-          &htm LCTL TAB &kp LSHFT       &htl SY RET     &htm LGUI FSLH &htm LALT QMARK &tmux   //right
+          &mo FN        &hml LALT UNDER &hml LGUI MINUS &htl EX BSPC   &kp SPACE       &kp ESC //left
+          &mt LCTL TAB &kp LSHFT       &htl SY RET     &hmr LGUI FSLH &hmr LALT QMARK &tmux   //right
         >;
       };
 
